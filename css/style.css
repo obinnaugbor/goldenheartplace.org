@@ -177,15 +177,16 @@ header {
     gap: 2rem;
 }
 .programs {
-    background: #add8e6;
+    background: #d8f9ff;
     text-align: center;
     border: 1px solid transparent;
+    border-radius: 20px;
     transition: all 500ms ease;
 }
 .programs:hover{
     background: transparent;
     border-color: aliceblue;
-    border-radius: 5px;
+    border-radius: 20px;
 }
 .program_info {
     padding: 2rem;
@@ -194,9 +195,51 @@ header {
     margin: 1.2rem 0 2rem;
     font-size: 0.9rem;
 }
+.pictures {
+    width: 80%;
+    margin: 100px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+.pictures img{
+    width: 100%;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.pictures img:hover {
+    transform: scale(0.8) rotate(-15deg);
+    border-radius: 20px;
+    box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+.fullpictures{
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.fullpictures img {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 70px;
+}
+.fullpictures close{
+    margin-top: 50px;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
 .testimonies {
     background: aliceblue;
-    box-shadow:inset 0 0 3rem black;
 }
 .testimonies_container {
     display: grid;
@@ -211,6 +254,9 @@ header {
     height: fit-content;
     background: ghostwhite;
     cursor: pointer;
+}
+.container .team_container{
+    background-image: url("bac.png");
 }
 .test h4 {
     font-size: 1 rem;
@@ -262,14 +308,14 @@ footer ul li a:hover {
     border-top: 1px solid #00008b;
 }
 
-/* for tablet */
-@media screen and (max-width: 1024px) {
-    .container{
-        width: 90%;
+@media all and (max-width: 1024px) {
+    .container {
+        width:90%;
     }
 
+
     h1 {
-        font-family: 2.2rem;
+        font-size: 2.2rem;
     }
     h2 {
         font-size: 1.7rem;
@@ -281,11 +327,110 @@ footer ul li a:hover {
         font-size: 1.2rem;
     }
 
-
-    nav button {
-        display: inline-block;
-        background: transparent;
-        font-size: 1.8rem;
+   nav button {
+       display: inline-block;
+       background: transparent;
+       font-size: 1.8rem;
+       color: white;
+       cursor: pointer;
+   }
+   nav button#close-menu-btn{
+       display: none;
+   }
+   .nav_menu{
+       position: fixed;
+       top: 5rem;
+       right: 5%;
+       height: fit-content;
+       width: 18rem;
+       flex-direction: column;
+       gap: 0;
+       display: none;
+   }
+   .nav_menu li{
+       width: 100%;
+       height: 5.8rem;
+   }
+   .nav_menu li a{
+    background-color: #9cc3d5ff;
+    box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    }
+    .nav_menu li a:hover {
+        background: #00008b;
         color: white;
+    }
+
+    header {
+        height: 52vh;
+        margin-bottom: 4rem;
+    }
+    .header_container{
+        gap: 0;
+        padding-bottom: 3rem;
+    }
+    .categories{
+        height: auto;
+    }
+    .categories_container{
+        gap: 3rem;
+    }
+    .categories_right{
+        margin: 1rem;
+      }
+      .categories_left{
+        margin-right: 0;
+    }
+    
+    .programs{
+        margin-top: 0;
+    }
+    .footer_container{
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 600px){
+    .container{
+        width: 94%;
+    }
+    .nav_menu{
+        right: 3%;
+    }
+    header {
+        height: 100vh;
+    }
+    .header_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 0;
+    }
+    .header_left p{
+        margin-bottom: 1.3rem;
+    }
+    .categories_right{
+        grid-template-columns: 1fr;
+        margin: 2rem;;
+    }
+    .category{
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .programs_container{
+        grid-template-columns: 1fr;
+    }
+    .footer_container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer_1 p{
+        margin: 1rem auto;
+    }
+    .footer_socials{
+        justify-content: center;
     }
 }
